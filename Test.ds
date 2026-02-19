@@ -1,11 +1,84 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<testcase  name= '' description='' author='' version=''>
-<dpl filename='' exectype='runstepbystep' errorhandling='' type='HashDPL' locale=''/>
-<fallback useFallback='true'/>
-<shadowDOM useShadowDOM='true'/>
-<step action='' value='' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0'>
-  <dialect type='sahi'>
-   <accessor type='' value='' selected='true'/>
-</dialect>
-</step>
-</testcase>
+  <testcase name='' description='script generated from Web Designer' author='Ian_Beard_WAH@appvance.com' version='webDesigner'>
+    <dpl filename='' exectype='runstepbystep' errorhandling='' type='HashDPL' locale='en_US'></dpl>
+    <fallback useFallback='true'></fallback>
+    <shadowDOM useShadowDOM='true'></shadowDOM>
+    <step action='navigateTo' value='"https://www.wahealthplanfinder.org/"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='b4e3b6d0-55ec-4ca9-8762-ddf1c475eae7' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='' value='' selected='true' fallback='false'></accessor>
+      </dialect>
+    </step>
+    <step action='selectWindow' value='""' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='93ccc8a7-d27b-488d-afce-70814ecffee6' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='' value='' selected='true' fallback='false'></accessor>
+      </dialect>
+    </step>
+    <step action='selectWindow' value='"Home | Washington Healthplanfinder"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='0c242e78-9854-41b2-ac5a-00d4d730d312' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='' value='' selected='true' fallback='false'></accessor>
+      </dialect>
+    </step>
+    <step action='setValue' value='"help"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='a1532893-2053-4dd4-bda0-0161eb8ef25a' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='XPathId' value='byXPath(&apos;//*[@id="nav-search-bar"]&apos;)' selected='true' fallback='true'></accessor>
+        <accessor type='AttrClass' value='textbox("form-control nav-search__query-input")' selected='false' fallback='true'></accessor>
+        <accessor type='Id' value='textbox("nav-search-bar")' selected='false' fallback='true'></accessor>
+        <accessor type='AbsoluteXPath' value='byXPath(&apos;/html/body/div/div/div/div/header/div[2]/div/div/div/div/input&apos;)' selected='false' fallback='true'></accessor>
+        <accessor type='RelativeXPath' value='byXPath("id(&apos;nav-search-bar&apos;)")' selected='false' fallback='true'></accessor>
+        <accessor type='Parent' value='textbox(0, _in(div("navbar-collapse")))' selected='false' fallback='true'></accessor>
+        <accessor type='Parent' value='textbox(0, _in(div({&apos;id&apos;:&apos;navbar-collapse&apos;})))' selected='false' fallback='true'></accessor>
+        <accessor type='XPath' value='byXPath("//input[@id=&apos;nav-search-bar&apos;]")' selected='false' fallback='true'></accessor>
+        <accessor type='Attribute' value='textbox({&apos;type&apos;:&apos;text&apos;})' selected='false' fallback='true'></accessor>
+        <accessor type='JQuery' value='byJQuery(&apos;div[class="region region-top-nav"] &gt; div[class="nav-search"] &gt; div[class="nav-search__query-area"] &gt; div[class="nav-search__input-group"] &gt; input[class="form-control nav-search__query-input"]&apos;)' selected='false' fallback='true'></accessor>
+        <accessor type='JQuery' value='byJQuery(&apos;#nav-search-bar&apos;)' selected='false' fallback='true'></accessor>
+      </dialect>
+    </step>
+    <step action='click' value='' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='ec8131e4-5709-4939-afbf-04dc0daa5297' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='AttrClass' value='italic("fa fa-search")' selected='true' fallback='true'></accessor>
+        <accessor type='AbsoluteXPath' value='byXPath(&apos;/html/body/div/div/div/div/header/div[2]/div/div/div/div/button/i&apos;)' selected='false' fallback='true'></accessor>
+        <accessor type='RelativeXPath' value='byXPath("id(&apos;nav-search-button&apos;)/i[@class=&apos;fa fa-search&apos;]")' selected='false' fallback='true'></accessor>
+        <accessor type='Parent' value='italic(0, _in(button("nav-search-button")))' selected='false' fallback='true'></accessor>
+        <accessor type='Parent' value='italic(0, _in(button({&apos;aria-label&apos;:&apos;search button&apos;})))' selected='false' fallback='true'></accessor>
+        <accessor type='XPath' value='byXPath("//button[@id=&apos;nav-search-button&apos;]/i")' selected='false' fallback='true'></accessor>
+        <accessor type='JQuery' value='byJQuery(&apos;#nav-search-button &gt; .fa.fa-search&apos;)' selected='false' fallback='true'></accessor>
+      </dialect>
+    </step>
+    <step action='selectWindow' value='"help | Search | Washington Healthplanfinder"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='dc4e4213-79e5-4740-97ea-8b3fdb10e003' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='' value='' selected='true' fallback='false'></accessor>
+      </dialect>
+    </step>
+    <step action='click' value='' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='0b880c45-31bb-4077-8351-c38b7121c75a' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='AttrHref' value='link("/content/wahpf/us/en/tools-and-resources/information/find-answers/get-coverage.html")' selected='true' fallback='true'></accessor>
+        <accessor type='Text' value='link("Get Coverage")' selected='false' fallback='true'></accessor>
+        <accessor type='XPathText' value='byXPath(&apos;//*[text()="Get Coverage"]&apos;)' selected='false' fallback='true'></accessor>
+        <accessor type='AbsoluteXPath' value='byXPath(&apos;/html/body/div/div/div[4]/div/div/div/div/div/div/div/div/div/div[2]/section/div/div/div/div/article[7]/h3/a&apos;)' selected='false' fallback='true'></accessor>
+        <accessor type='XPath' value='byXPath("//div[@id=&apos;search-results-list&apos;]/div/div[1]/article[7]/h3/a")' selected='false' fallback='true'></accessor>
+        <accessor type='JQuery' value='byJQuery(&apos;a[href="/content/wahpf/us/en/tools-and-resources/information/find-answers/get-coverage.html"]&apos;)' selected='false' fallback='true'></accessor>
+      </dialect>
+    </step>
+    <step action='selectWindow' value='"Get Coverage | Washington Healthplanfinder"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='bd85f251-1527-41d5-9612-df984f005ebf' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='' value='' selected='true' fallback='false'></accessor>
+      </dialect>
+    </step>
+    <step action='click' value='' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='d108b862-c0eb-4580-8a87-1e07b895e2ba' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='XPathId' value='byXPath(&apos;//*[@id="anchor-item-9"]&apos;)' selected='true' fallback='true'></accessor>
+        <accessor type='AttrClass' value='link("menu-anchor[8]")' selected='false' fallback='true'></accessor>
+        <accessor type='Id' value='link("anchor-item-9")' selected='false' fallback='true'></accessor>
+        <accessor type='AttrHref' value='link("#disability")' selected='false' fallback='true'></accessor>
+        <accessor type='Text' value='link("Long-term disability services")' selected='false' fallback='true'></accessor>
+        <accessor type='XPathText' value='byXPath(&apos;//*[text()="Long-term disability services "]&apos;)' selected='false' fallback='true'></accessor>
+        <accessor type='AbsoluteXPath' value='byXPath(&apos;/html/body/div/div/div[4]/div/div/div/div[2]/div/div/div/div/div/div/div/div/div/div/nav/div/ul/li/ul/li[2]/ul/li[10]/a&apos;)' selected='false' fallback='true'></accessor>
+        <accessor type='RelativeXPath' value='byXPath("id(&apos;anchor-item-9&apos;)")' selected='false' fallback='true'></accessor>
+        <accessor type='Parent' value='link(0, _in(listItem("anchors-menu-list-item-9")))' selected='false' fallback='true'></accessor>
+        <accessor type='Parent' value='link(0, _in(listItem({&apos;id&apos;:&apos;anchors-menu-list-item-9&apos;})))' selected='false' fallback='true'></accessor>
+        <accessor type='XPath' value='byXPath("//a[@id=&apos;anchor-item-9&apos;]")' selected='false' fallback='true'></accessor>
+        <accessor type='JQuery' value='byJQuery(&apos;#anchor-item-9&apos;)' selected='false' fallback='true'></accessor>
+        <accessor type='JQuery' value='byJQuery(&apos;a[href="#disability"]&apos;)' selected='false' fallback='true'></accessor>
+      </dialect>
+    </step>
+  </testcase>

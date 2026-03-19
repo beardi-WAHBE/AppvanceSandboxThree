@@ -12,4 +12,5 @@ function GetPageLinks(in_parentXPath) {
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
 log("Does this log work???");
 
-GetPageLinks("//header");
+click(GetPageLinks("//header"));
+log(getBrowserURL());

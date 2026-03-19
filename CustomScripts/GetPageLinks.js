@@ -4,10 +4,8 @@
 */
 
 function GetPageLinks(in_parentXPath) {
-    let links = _eval("let returnStr = ''; ds$('#block-whbelanguageswitcher').find('a').each(function() {returnStr += ds$(this).attr('href')}); return returnStr;");
-    links.forEach(link => {
-        log(link.href);
-    });
+    let links = _eval("ds$('#block-whbelanguageswitcher').find('a')");
+    log(links.length);
 }
 
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");

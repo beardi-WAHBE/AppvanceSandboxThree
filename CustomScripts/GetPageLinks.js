@@ -4,7 +4,7 @@
 */
 
 function GetPageLinks(in_parentXPath) {
-    let links = byXPath(in_parentXPath + "//a");
+    let links = byXPath(in_parentXPath + "//a[contains(@href, '/us/en/home-page.html')]");
     log(links);
     return links;
 }

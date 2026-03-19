@@ -4,9 +4,11 @@
 */
 
 function GetPageLinks(in_parentXPath) {
-    let links = byXPath(in_parentXPath + "//a");
-    log(links);
-    return links;
+    let parent = byXPath(in_parentXPath);
+    let links = parent.querySelectorAll('a');
+    links.forEach(link => {
+        log(link.href);
+    });
 }
 
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");

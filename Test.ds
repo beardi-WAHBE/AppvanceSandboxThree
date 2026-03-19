@@ -6,6 +6,14 @@
     <step action='navigateTo' value='"https://www.wahealthplanfinder.org/"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='b4e3b6d0-55ec-4ca9-8762-ddf1c475eae7' uiType='base'>
       <dialect type='sahi'></dialect>
     </step>
+    <step action='evalAndReturn' value='GetAllLinks();' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='c1a4e6d9-8f5c-4951-b1f6-4081677800fa' uiType='base'>
+      <dialect type='sahi'>
+        <accessor type='unknown' value='links' selected='true' fallback='true'></accessor>
+      </dialect>
+    </step>
+    <step action='js' value='for(var link in links) {Click(link)}' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='6bb3949c-a051-4a3c-ba2f-fcc9a90edcbc' uiType='base'>
+      <dialect type='sahi'></dialect>
+    </step>
     <step action='log' value='"Log?"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='bc42a498-5f57-4d58-a85c-ef3e8c2ab01e' uiType='base'>
       <dialect type='sahi'></dialect>
     </step>

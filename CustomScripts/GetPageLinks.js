@@ -4,8 +4,7 @@
 */
 
 function GetPageLinks(in_parentXPath) {
-    let parent = byXPath(in_parentXPath);
-    let links = $parent.find('a');
+    let links = $("header").find('a');
     links.forEach(link => {
         log(link.href);
     });
@@ -14,5 +13,5 @@ function GetPageLinks(in_parentXPath) {
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
 log("Does this log work???");
 
-GetPageLinks("//header");
+GetPageLinks("header");
 log(getBrowserURL());

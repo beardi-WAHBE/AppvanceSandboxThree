@@ -9,4 +9,7 @@
     <step action='log' value='"Log?"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='bc42a498-5f57-4d58-a85c-ef3e8c2ab01e' uiType='base'>
       <dialect type='sahi'></dialect>
     </step>
+    <step action='assertTrue' value='false' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='25e975f3-4334-41b2-b0cb-0bb9d9de12fd' uiType='base'>
+      <dialect type='sahi'></dialect>
+    </step>
   </testcase>

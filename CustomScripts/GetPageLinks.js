@@ -4,8 +4,7 @@
 */
 
 function GetPageLinks(in_parentXPath) {
-    let parent = _eval("ds$(document).find('#block-whbelanguageswitcher');")
-    let links = parent.getElementsByTagName('a');
+    let links = _eval("ds$('#block-whbelanguageswitcher').find('a');");
     links.forEach(link => {
         log(link.href);
     });

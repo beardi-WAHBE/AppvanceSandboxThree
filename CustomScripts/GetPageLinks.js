@@ -8,12 +8,9 @@ function GetPageLinks(in_parentXPath) {
     log(links.length);
     for (let i = 0; i < links.length; i++) {
         
-        log(getAttribute(links[i], "href"));
+        log(i + ": " + getAttribute(links[i], "href"));
     }
 }
 
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
-log("Does this log work???");
-
 GetPageLinks("header");
-log(getBrowserURL());

@@ -4,7 +4,7 @@
 */
 
 function GetPageLinks(in_parentXPath) {
-    let parent = document.getElementsByTagName("header")[0];
+    let parent = _eval("ds$(document).getElementsByTagName('header')[0];")
     let links = parent.getElementsByTagName('a');
     links.forEach(link => {
         log(link.href);

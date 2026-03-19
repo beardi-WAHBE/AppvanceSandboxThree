@@ -4,6 +4,7 @@
 */
 
 function GetPageLinks(in_parentXPath) {
-    let links = byXPath(in_parentXPath + "//a")
-    log(links)
+    let links = byXPath(in_parentXPath + "//a");
+    log(links);
+    return links;
 }

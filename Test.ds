@@ -14,6 +14,9 @@
         <accessor type='unknown' value='myVar' selected='true' fallback='true'></accessor>
       </dialect>
     </step>
+    <step action='log' value='myVar' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='58c44cf8-1949-4fbb-861c-1e420c734cf1' uiType='base'>
+      <dialect type='sahi'></dialect>
+    </step>
     <step action='assertTrue' value='myVar' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='25e975f3-4334-41b2-b0cb-0bb9d9de12fd' uiType='base'>
       <dialect type='sahi'></dialect>
     </step>

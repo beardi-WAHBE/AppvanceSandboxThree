@@ -11,4 +11,7 @@
         <accessor type='unknown' value='links' selected='true' fallback='true'></accessor>
       </dialect>
     </step>
+    <step action='log' value='links' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='06931318-eef3-451c-bf9b-40b327e6813e' uiType='base'>
+      <dialect type='sahi'></dialect>
+    </step>
   </testcase>

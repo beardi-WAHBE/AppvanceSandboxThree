@@ -8,3 +8,6 @@ function GetPageLinks(in_parentXPath) {
     log(links);
     return links;
 }
+
+navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
+log("Does this log work???");

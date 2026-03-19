@@ -5,7 +5,7 @@
 
 function GetPageLinks(in_parentXPath) {
     let parent = byXPath(in_parentXPath);
-    let links = parent.find('a');
+    let links = $parent.find('a');
     links.forEach(link => {
         log(link.href);
     });

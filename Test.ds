@@ -6,12 +6,7 @@
     <step action='navigateTo' value='"https://www.wahealthplanfinder.org/"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='b4e3b6d0-55ec-4ca9-8762-ddf1c475eae7' uiType='base'>
       <dialect type='sahi'></dialect>
     </step>
-    <step action='evalAndReturn' value='getPageLinks("//body")' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='f50236e9-206d-4384-acc2-2e48073bdb3a' uiType='base'>
-      <dialect type='sahi'>
-        <accessor type='unknown' value='links' selected='true' fallback='true'></accessor>
-      </dialect>
-    </step>
-    <step action='log' value='links' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='06931318-eef3-451c-bf9b-40b327e6813e' uiType='base'>
+    <step action='log' value='"Log?"' type='web' desc='' isThinkTime='false' isCommented='false' sequence='0' hasBreakPoint='false' indentLevel='0' isVisible='true' parentId='' uid='bc42a498-5f57-4d58-a85c-ef3e8c2ab01e' uiType='base'>
       <dialect type='sahi'></dialect>
     </step>
   </testcase>

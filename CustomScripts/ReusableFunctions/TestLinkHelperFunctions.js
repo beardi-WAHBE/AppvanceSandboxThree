@@ -82,9 +82,8 @@ function IsOnHomepage(in_url) {
 
     const env = GetEnv(in_url);
     homepageURLs[env].forEach((val) => {
-        if (in_url == env + val) {
+        if (in_url == env + val && !returnVal) {
             returnVal = true;
-            break;
         }
     });
 

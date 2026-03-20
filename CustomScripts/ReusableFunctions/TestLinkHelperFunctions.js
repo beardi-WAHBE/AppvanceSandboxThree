@@ -71,8 +71,10 @@ function GetEnv(in_url) {
         // Check the URL for an identifier that corrsponds to one of our Sites
         if(in_url.contains(envs[env])) {
             returnEnv = env;
-            break;
         }
+
+        // Stop checking if the environment was identified
+        if (returnEnv != "NULL") break;
     });
 
     return returnEnv;

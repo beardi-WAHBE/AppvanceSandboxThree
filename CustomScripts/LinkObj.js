@@ -58,6 +58,7 @@ function UnitTest_FindByXPath(in_xpath) {
     for(let i = 0; i < elements.length; i++) {
         logStr += "\n - " + getTextSelenium(elements[i]);
     }
+    logStr += "\n";
 
     log(logStr);
 }

@@ -14,9 +14,9 @@ function FindByXPath(in_xpath) {
         }
         $(nodes);
     `);
-
+    log(`Elements(${elements.length}): ${elements}`);
     for(let i = 0; i < elements.length; i++) {
-        log(getTextSelenium(elements[i]));
+        log(" - " + getTextSelenium(elements[i]));
     }
     return "Yay?";
 }

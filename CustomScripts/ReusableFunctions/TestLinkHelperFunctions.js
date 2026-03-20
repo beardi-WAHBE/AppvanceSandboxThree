@@ -47,32 +47,34 @@ const envs = {
 // Link Helper Functions
 
 function GetSite(in_url) {
-    let returnSite = "NULL";
+    // Default to External Site
+    let returnSite = "EXT";
 
-    Object.keys(sites).forEach((site) => {
-        // Check the URL for an identifier that corrsponds to one of our Sites
+    for(let site in Object.keys(sites)) {
+        if (site == "EXT") continue;
+
         sites[site].some((identifier) => {
-            if(in_url.includes(identifier) && returnSite == "NULL") {
+            if(in_url.includes(identifier)) {
                 returnSite = site
                 return;
             };
         });
-    });
+
+        if (returnSite != "EXT") break;
+    }
 
     return returnSite;
 }
 
 function GetEnv(in_url) {
-    let returnEnv = "NULL";
+    // Default to External Environment
+    let returnEnv = "EXT";
     
     for(let env in Object.keys(envs)) {
         // Check the URL for an identifier that corrsponds to one of our Sites
+        if (env = "PRD" && GetSite(in_url) == "EXT") break;
         if(in_url.contains(envs[env])) {
             returnEnv = env;
-            break;
-        }
-        else if (env == "EXT") {
-            returnEnv = "EXT";
             break;
         }
     }

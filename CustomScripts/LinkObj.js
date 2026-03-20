@@ -4,7 +4,7 @@
 */
 
 function FindByXPath(in_xpath) {
-    return _eval(`
+    const elements =  _eval(`
         const parentNode = ds$(document)[0]; 
         const result = parentNode.evaluate("//header//a", parentNode, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
         let nodes = [];
@@ -14,6 +14,11 @@ function FindByXPath(in_xpath) {
         }
         $(nodes);
     `);
+
+    elements.forEach((element) => {
+        log(getTextSelenium(element));
+    });
+    return "Yay?";
 }
 
 function GenerateXPathProp(in_att, in_val) {

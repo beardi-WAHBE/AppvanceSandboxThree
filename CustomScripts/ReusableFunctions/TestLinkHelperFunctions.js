@@ -91,7 +91,7 @@ function IsOnHomepage(in_url) {
         });
     }
     catch(TypeError) {
-        log(`ERROR - Index out of bounds: Looking for ${site} in homepageURLs ${homepageURLs.toString()}`)
+        log(`ERROR - Index out of bounds: Looking for ${site} in homepageURLs ${Object.keys(homepageURLs).toString()}`)
     }
     finally {
         return returnVal;

@@ -19,7 +19,9 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
 
     xpath += "//a[";
     for(let i = 0; i < arr_XPathProps.length; i++) {
-        if (arr_XPathProps[i] != "") xpath += arr_XPathProps[i];
+        if (arr_XPathProps[i] == "") continue;
+        
+        xpath += arr_XPathProps[i];
 
         if (i != arr_XPathProps.length - 1) xpath += " and "
     }

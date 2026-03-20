@@ -6,7 +6,7 @@
 function FindByXPath(in_xpath) {
     return  _eval(`
         const parentNode = ds$(document)[0]; 
-        const result = parentNode.evaluate("${in_xpath}", parentNode, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+        const result = parentNode.evaluate(\`${in_xpath}\`, parentNode, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
         let nodes = [];
         let node;
         while ((node = result.iterateNext()) !== null) {

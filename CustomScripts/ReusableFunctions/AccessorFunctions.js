@@ -80,5 +80,5 @@ function UnitTest_XpathIsUnique(in_page, in_XPath, in_expectedResult) {
 }
 
 
-//UnitTest_FindByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
-UnitTest_XpathIsUnique("https://uat.wahpf.org/us/en/home-page.html", `//A[contains(@href, "#") and contains(., "My Account") ]`, true)
+UnitTest_FindByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
+//UnitTest_XpathIsUnique("https://uat.wahpf.org/us/en/home-page.html", `//A[contains(@href, "#") and contains(., "My Account") ]`, true)

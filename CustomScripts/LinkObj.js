@@ -4,7 +4,7 @@
 */
 
 function FindByXPath(in_xpath) {
-    return _eval(`ds$(document).evaluate(${in_xpath}, ds$(document)), null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);`);
+    return _eval(`ds$(document).evaluate(${in_xpath}, ds$(document), null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);`);
 }
 
 function GenerateXPathProp(in_att, in_val) {

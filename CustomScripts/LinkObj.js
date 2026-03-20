@@ -4,7 +4,7 @@
 */
 
 function FindByXPath(in_xpath) {
-    const elements =  _eval(`
+    return  _eval(`
         const parentNode = ds$(document)[0]; 
         const result = parentNode.evaluate("//header//a", parentNode, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
         let nodes = [];
@@ -14,11 +14,6 @@ function FindByXPath(in_xpath) {
         }
         nodes;
     `);
-    log(`Elements(${elements.length}): ${elements}`);
-    for(let i = 0; i < elements.length; i++) {
-        log(" - " + getTextSelenium(elements[i]));
-    }
-    return "Yay?";
 }
 
 function GenerateXPathProp(in_att, in_val) {
@@ -54,4 +49,9 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
 
 // Unit Tests
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
-log(FindByXPath("//header//a"));
+const elements = FindByXPath("//header//a");
+let logStr = `\nElements(${elements.length}): ${elements}`;
+for(let i = 0; i < elements.length; i++) {
+    logStr += "\n - " + getTextSelenium(elements[i]);
+}
+log(logStr);

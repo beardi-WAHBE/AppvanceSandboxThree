@@ -68,10 +68,12 @@ function UnitTest_FindElementsByXPath(in_page, in_xpath) {
     `;
 
     for(let i = 0; i < elements.length; i++) {
-        let elementXPath = GenerateUniqueXPath(elements[i], "");
+        let elem = elements[i];
+        let elementXPath = GenerateUniqueXPath(elem, "");
         let isUnique = (XPathIsUnique(elementXPath)) ? "Unique" : "Not Unique";
+        let isHidden = (getComputedStyle(elem, "visibility") == "hidden") ? " HIDDEN ": " ";
 
-        logStr += ` - ${getTextSelenium(elements[i])}: ${elementXPath} (${isUnique}) \n`;
+        logStr += ` -${isHidden}${getTextSelenium(elem)}: ${elementXPath} (${isUnique}) \n`;
     }
 
     log(logStr);
@@ -88,16 +90,10 @@ function UnitTest_XpathIsUnique(in_page, in_XPath, in_expectedResult) {
     `);
 }
 
-function UnitTest_UseBuiltInLinkFind(in_page) {
-    navigateTo(in_page);
-    let foundLinks = _links(byTagName("header"));
-    log(foundLinks);
-}
 
-
-//UnitTest_FindElementsByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
+UnitTest_FindElementsByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
 //UnitTest_XpathIsUnique("https://uat.wahpf.org/us/en/home-page.html", `//A[contains(@href, "#") and contains(., "My Account") ]`, true)
-UnitTest_UseBuiltInLinkFind("https://uat.wahpf.org/us/en/home-page.html");
+
 
 
 

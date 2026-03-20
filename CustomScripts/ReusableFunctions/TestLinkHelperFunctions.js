@@ -84,14 +84,16 @@ function IsOnHomepage(in_url) {
 
     let returnVal = false;
     try {
-        homepageURLs[site].forEach((val) => {
-            if (in_url == envs[env] + val && !returnVal) {
+        for(let val of homepageURLs[site]) {
+            if (in_url == envs[env] + val) {
                 returnVal = true;
+                break;
             }
-        });
+        }
+        
     }
     catch(TypeError) {
-        log(`ERROR - Index out of bounds: Looking for ${site} in homepageURLs ${Object.keys(homepageURLs).toString()}`)
+        log(`ERROR - Index out of bounds: Looking for ${site} in homepageURLs [${Object.keys(homepageURLs)}]`)
     }
     finally {
         return returnVal;

@@ -14,6 +14,3 @@ function GetPageLinks(in_parentXPath) {
         navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
     }
 }
-
-navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
-GetPageLinks("header");

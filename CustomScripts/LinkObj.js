@@ -5,7 +5,9 @@
 
 function GenerateUniqueXPath(in_webElement, in_parentXPath) {
     let xpath = "";
-    const target_name = ` contains(@name, "${getAttribute(in_webElement, "name")}") `;
+    const target_name = (getAttribute(in_webElement, "name"))
+                            ? ` contains(@name, "${getAttribute(in_webElement, "name")}") `
+                            : "";
     const target_href = ` contains(@href, "${getAttribute(in_webElement, "href")}") `;
     const target_class = ` contains(@class, "${getAttribute(in_webElement, "class")}") `;
     const target_text = (getTextSelenium(in_webElement).contains(`"`)) 

@@ -44,6 +44,10 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
     return xpath;
 }
 
+function XPathIsUnique(in_XPath) {
+    return (FindByXPath(in_XPath).length == 1);
+}
+
 // Unit Tests
 function UnitTest_FindByXPath(in_page, in_xpath) {
     navigateTo(in_page);
@@ -55,10 +59,12 @@ function UnitTest_FindByXPath(in_page, in_xpath) {
     `;
 
     for(let i = 0; i < elements.length; i++) {
-        logStr += ` - ${getTextSelenium(elements[i])}: ${GenerateUniqueXPath(elements[i], "")} \n`;
+        let isUnique = (XPathIsUnique(elements[i])) ? "Unique" : "Not Unique";
+        logStr += ` - ${getTextSelenium(elements[i])}: ${GenerateUniqueXPath(elements[i], "")} (${isUnique}) \n`;
     }
 
     log(logStr);
 }
+
 
 UnitTest_FindByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");

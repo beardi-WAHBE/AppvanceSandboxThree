@@ -45,4 +45,4 @@ function LinkObj(in_webElement, in_parentXPath) {
 
 // Unit Tests
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
-FindByXPath("//header//a");
+log(FindByXPath("//header//a"));

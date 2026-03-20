@@ -72,7 +72,6 @@ function GetEnv(in_url) {
     
     for(let env in Object.keys(envs)) {
         // Check the URL for an identifier that corrsponds to one of our Sites
-        if (env = "PRD" && GetSite(in_url) == "EXT") break;
         if(in_url.contains(envs[env])) {
             returnEnv = env;
             break;

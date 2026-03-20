@@ -31,7 +31,7 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
         GenerateXPathProp(".", getTextSelenium(in_webElement)),
     ]
 
-    xpath += `//${getProp(in_webElement)}[`;
+    xpath += `//${getProp(in_webElement, "tagName")}[`;
     for(let i = 0; i < arr_XPathProps.length; i++) {
         if (arr_XPathProps[i] == "") continue;
         

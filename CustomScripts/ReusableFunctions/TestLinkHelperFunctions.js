@@ -57,8 +57,6 @@ function GetSite(in_url) {
                 return;
             };
         });
-        // Stop checking if the site was identified
-        if (returnSite != "NULL") break;
     });
 
     return returnSite;
@@ -72,9 +70,6 @@ function GetEnv(in_url) {
         if(in_url.contains(envs[env])) {
             returnEnv = env;
         }
-
-        // Stop checking if the environment was identified
-        if (returnEnv != "NULL") break;
     });
 
     return returnEnv;

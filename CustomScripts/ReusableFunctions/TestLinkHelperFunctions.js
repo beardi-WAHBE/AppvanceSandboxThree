@@ -52,13 +52,18 @@ function GetSite(in_url) {
 
     for(let site in Object.keys(sites)) {
         if (site == "EXT") continue;
-
-        sites[site].some((identifier) => {
-            if(in_url.includes(identifier)) {
-                returnSite = site
-                return;
-            };
-        });
+        try {
+            sites[site].some((identifier) => {
+                if(in_url.includes(identifier)) {
+                    returnSite = site
+                    return;
+                };
+            });
+        }
+        catch(TypeError) {
+            log(`ERROR - TypeError: Sites[${site}] was undefined.`);
+        }
+        
 
         if (returnSite != "EXT") break;
     }

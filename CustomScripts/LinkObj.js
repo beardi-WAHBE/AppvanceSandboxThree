@@ -4,7 +4,10 @@
 */
 
 function FindByXPath(in_xpath) {
-    return _eval(`ds$(document).find('a')`);
+    return _eval(`
+        let tag = 'a';
+        ds$(document).find(tag);
+    `);
 }
 
 function GenerateXPathProp(in_att, in_val) {

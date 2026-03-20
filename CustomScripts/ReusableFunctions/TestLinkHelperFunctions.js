@@ -26,7 +26,7 @@ const homepageURLs = {
         ".wahbexchange.org/home-page/",
     ],
     PWS: [
-        ".wapathways.org",
+        ".wapathways.org/",
     ],
 };
 const sites = {

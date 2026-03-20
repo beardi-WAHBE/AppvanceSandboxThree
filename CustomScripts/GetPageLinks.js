@@ -10,6 +10,6 @@ function GetPageLinks(in_parentXPath) {
     for (let i = 0; i < links.length; i++) {
         let href = getAttribute(links[i], "href")
         log(i + ": " + href);
-        GenerateUniqueXPath(links[i], "//header");
+        GenerateUniqueXPath(links[i], in_parentXPath);
     }
 }

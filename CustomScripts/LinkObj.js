@@ -4,6 +4,7 @@
 */
 
 function FindByXPath(in_xpath) {
+    //return _eval(`ds$(document).evaluate("//header//a", ds$(document), null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);`);
     return in_xpath;
 }
 
@@ -40,4 +41,4 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
 
 // Unit Tests
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
-log("what?");
+log(FindByXPath("//header//a"));

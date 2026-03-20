@@ -4,7 +4,7 @@
 */
 
 function FindByXPath(in_xpath) {
-    return _eval(`let parentNode = ds$(document); document.evaluate("//header//a", parentNode, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);`);
+    return _eval(`let parentNode = ds$(document)[0]; parentNode.evaluate("//header//a", parentNode, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);`);
 }
 
 function GenerateXPathProp(in_att, in_val) {

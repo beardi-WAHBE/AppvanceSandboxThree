@@ -10,8 +10,8 @@ function FilterAppLinks(in_href) {
     else return in_href;
 }
 
-function ElementIsHidden(in_element) {
-    return getComputedStyle(in_element, "visibility") == "hidden";
+function ElementIsNotHidden(in_element) {
+    return getComputedStyle(in_element, "visibility") != "hidden";
 }
 
 // --=|| Reusable Functions ||=--
@@ -29,7 +29,7 @@ function FindElementsByXPath(in_xpath, in_ignoreHidden = false) {
     `);
 
     if (in_ignoreHidden) {
-        elements = elements.filter(!ElementIsHidden);
+        elements = elements.filter(ElementIsNotHidden);
     }
 
     return elements;

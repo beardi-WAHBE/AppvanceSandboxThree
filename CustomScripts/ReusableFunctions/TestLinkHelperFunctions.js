@@ -64,13 +64,18 @@ function GetSite(in_url) {
 
 function GetEnv(in_url) {
     let returnEnv = "NULL";
-
-    Object.keys(envs).forEach((env) => {
+    
+    for(let env in Object.keys(envs)) {
         // Check the URL for an identifier that corrsponds to one of our Sites
-        if(in_url.contains(envs[env]) && returnEnv == "NULL") {
+        if(in_url.contains(envs[env])) {
             returnEnv = env;
+            break;
         }
-    });
+        else if (env == "EXT") {
+            returnEnv = "EXT";
+            break;
+        }
+    }
 
     return returnEnv;
 }
@@ -90,7 +95,6 @@ function IsOnHomepage(in_url) {
                 break;
             }
         }
-        
     }
     catch(TypeError) {
         log(`ERROR - Index out of bounds: Looking for ${site} in homepageURLs [${Object.keys(homepageURLs)}]`)

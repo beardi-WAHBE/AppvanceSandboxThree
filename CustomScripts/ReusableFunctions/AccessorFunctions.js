@@ -58,7 +58,7 @@ function UnitTest_FindByXPath(in_page, in_xpath) {
     `;
 
     for(let i = 0; i < elements.length; i++) {
-        logStr += ` - ${getTextSelenium(elements[i])} \n`;
+        logStr += ` - ${getTextSelenium(elements[i])}: ${GenerateUniqueXPath(elements[i], "")} \n`;
     }
 
     log(logStr);

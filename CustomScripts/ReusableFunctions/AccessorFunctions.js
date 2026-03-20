@@ -10,10 +10,14 @@ function FilterAppLinks(in_href) {
     else return in_href;
 }
 
+function ElementIsHidden(in_element) {
+    return getComputedStyle(in_element, "visibility") == "hidden";
+}
+
 // --=|| Reusable Functions ||=--
 
-function FindElementsByXPath(in_xpath) {
-    return  _eval(`
+function FindElementsByXPath(in_xpath, in_ignoreHidden = false) {
+    let elements = _eval(`
         const parentNode = ds$(document)[0]; 
         const result = parentNode.evaluate(\`${in_xpath}\`, parentNode, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
         let nodes = [];
@@ -23,6 +27,12 @@ function FindElementsByXPath(in_xpath) {
         }
         nodes;
     `);
+
+    if (in_ignoreHidden) {
+        elements = elements.filter(!ElementIsHidden);
+    }
+
+    return elements;
 }
 
 function GenerateXPathProp(in_att, in_val) {

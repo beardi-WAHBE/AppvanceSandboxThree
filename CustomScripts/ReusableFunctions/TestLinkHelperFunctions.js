@@ -40,7 +40,7 @@ const envs = {
     UAT: "https://uat",
     DEV: "https://dev",
     PRD: "https://www",
-    QA:  "https://qa.",
+    QA:  "https://qa",
 }
 
 // Link Helper Functions

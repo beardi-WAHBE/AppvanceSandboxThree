@@ -3,6 +3,15 @@
  * This script requires AIQ Web Designer
 */
 
+// --=|| Helpers ||=--
+
+function FilterAppLinks(in_href) {
+    if(in_href.contains("/HBEWeb/")) return in_href.split("&id=")[0];
+    else return in_href;
+}
+
+// --=|| Reusable Functions ||=--
+
 function FindByXPath(in_xpath) {
     return  _eval(`
         const parentNode = ds$(document)[0]; 
@@ -26,7 +35,7 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
     
     const arr_XPathProps = [
         GenerateXPathProp("@name", getAttribute(in_webElement, "name")),
-        GenerateXPathProp("@href", getAttribute(in_webElement, "href")),
+        GenerateXPathProp("@href", FilterAppLinks(getAttribute(in_webElement, "href"))),
         GenerateXPathProp("@class", getAttribute(in_webElement, "name")),
         GenerateXPathProp(".", getTextSelenium(in_webElement)),
     ]

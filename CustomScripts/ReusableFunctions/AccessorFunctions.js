@@ -106,7 +106,7 @@ function UnitTest_ClickOnAllLinks(in_page, in_parentXPath, in_ignoreHidden = tru
     const elements = FindElementsByXPath(in_parentXPath + "//a", in_ignoreHidden);
     let elementAccessors = [];
     elements.forEach((elem) => {
-        elementAccessors.add(GenerateUniqueXPath(elem, in_parentXPath));
+        elementAccessors.push(GenerateUniqueXPath(elem, in_parentXPath));
     });
 
     elementAccessors.forEach((in_xpath) => {

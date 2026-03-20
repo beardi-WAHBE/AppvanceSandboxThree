@@ -5,4 +5,4 @@
 include("{ds}/GetPageLinks.js")
 
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
-GetPageLinks("header");
+GetPageLinks("//header");

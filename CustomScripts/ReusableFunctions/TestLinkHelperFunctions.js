@@ -76,13 +76,13 @@ function GetEnv(in_url) {
 }
 
 function IsOnHomepage(in_url) {
-    if (["EXT", "APP"].includes(GetSite(in_url))) return false;
+    const env = GetEnv(in_url);
+    const site = GetSite(in_url);
+
+    if (["EXT", "APP"].includes(site)) return false;
 
     let returnVal = false;
-
-    const env = GetEnv(in_url);
-    log(`IsOnHomepage: ${env}`);
-    homepageURLs[env].forEach((val) => {
+    homepageURLs[site].forEach((val) => {
         if (in_url == env + val && !returnVal) {
             returnVal = true;
         }

@@ -90,7 +90,7 @@ function UnitTest_XpathIsUnique(in_page, in_XPath, in_expectedResult) {
 
 function UnitTest_UseBuiltInLinkFind(in_page) {
     navigateTo(in_page);
-    let foundLinks = links(byTagName("header"));
+    let foundLinks = _links(byTagName("header"));
     log(foundLinks);
 }
 

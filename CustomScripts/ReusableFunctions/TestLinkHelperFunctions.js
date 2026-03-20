@@ -52,7 +52,7 @@ function GetSite(in_url) {
     Object.keys(sites).forEach((site) => {
         // Check the URL for an identifier that corrsponds to one of our Sites
         sites[site].some((identifier) => {
-            if(in_url.includes(identifier)) {
+            if(in_url.includes(identifier) && returnSite == "NULL") {
                 returnSite = site
                 return;
             };
@@ -67,7 +67,7 @@ function GetEnv(in_url) {
 
     Object.keys(envs).forEach((env) => {
         // Check the URL for an identifier that corrsponds to one of our Sites
-        if(in_url.contains(envs[env])) {
+        if(in_url.contains(envs[env]) && returnEnv == "NULL") {
             returnEnv = env;
         }
     });

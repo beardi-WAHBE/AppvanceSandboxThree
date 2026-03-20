@@ -5,8 +5,12 @@
 
 function FindByXPath(in_xpath) {
     return _eval(`
-        let tag = 'a';
-        ds$(document).find(tag);
+        const result = ds$(document).evaluate(${in_xpath}, ds$(document), null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+        let nodes = [];
+        let node;
+        while((node = result.iterateNext()) !== null) {
+            nodes.push(node)
+        }
     `);
 }
 

@@ -5,7 +5,7 @@
 
 function GenerateUniqueXPath(in_webElement, in_parentXPath) {
     let xpath = "";
-    log(getAttribute(in_webElement, "name") == undefined);
+    log(typeof getAttribute(in_webElement, "name") == undefined);
     const target_name = (getAttribute(in_webElement, "name") != undefined)
                             ? ` contains(@name, "${getAttribute(in_webElement, "name")}") `
                             : "";

@@ -33,6 +33,7 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
     xpath += "]";
 
     let bool_unique = (FindByXPath(xpath).length == 1);
+    log(bool_unique);
     
     return xpath;
 }

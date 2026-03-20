@@ -61,12 +61,24 @@ function UnitTest_FindByXPath(in_page, in_xpath) {
     for(let i = 0; i < elements.length; i++) {
         let elementXPath = GenerateUniqueXPath(elements[i], "");
         let isUnique = (XPathIsUnique(elementXPath)) ? "Unique" : "Not Unique";
-        
+
         logStr += ` - ${getTextSelenium(elements[i])}: ${elementXPath} (${isUnique}) \n`;
     }
 
     log(logStr);
 }
 
+function UnitTest_XpathIsUnique(in_page, in_XPath, in_expectedResult) {
+    navigateTo(in_page);
+    let actualResult = XPathIsUnique(in_XPath);
+    log(`
+    \n${in_XPath}: 
+    \n - Length: ${FindByXPath(in_XPath).length}
+    \n - Expected: ${in_expectedResult}
+    \n - Actual:   ${actualResult}
+    `);
+}
 
-UnitTest_FindByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
+
+//UnitTest_FindByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
+UnitTest_XpathIsUnique("https://uat.wahpf.org/us/en/home-page.html", `//A[contains(@href, "#") and contains(., "My Account") ]`, true)

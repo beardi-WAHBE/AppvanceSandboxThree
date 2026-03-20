@@ -31,7 +31,7 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
         GenerateXPathProp(".", getTextSelenium(in_webElement)),
     ]
 
-    xpath += "//a[";
+    xpath += `//${getProp(in_webElement)}[`;
     for(let i = 0; i < arr_XPathProps.length; i++) {
         if (arr_XPathProps[i] == "") continue;
         
@@ -40,9 +40,6 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
         if (i != arr_XPathProps.length - 1) xpath += " and "
     }
     xpath += "]";
-
-    let bool_unique = (FindByXPath(xpath).length == 1);
-    log(bool_unique);
     
     return xpath;
 }

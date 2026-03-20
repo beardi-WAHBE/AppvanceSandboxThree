@@ -75,7 +75,7 @@ function GetEnv(in_url) {
     // Default to External Environment
     let returnEnv = "EXT";
     
-    for(let env in Object.keys(envs)) {
+    for(let env of Object.keys(envs)) {
         // Check the URL for an identifier that corrsponds to one of our Sites
         if (env = "PRD" && GetSite(in_url) == "EXT") break;
         if(in_url.contains(envs[env])) {

@@ -42,3 +42,7 @@ function LinkObj(in_webElement, in_parentXPath) {
     this.webElement = in_webElement;
     this.href = ""
 }
+
+// Unit Tests
+navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
+FindByXPath("//header//a");

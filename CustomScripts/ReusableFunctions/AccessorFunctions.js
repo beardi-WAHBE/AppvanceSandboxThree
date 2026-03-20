@@ -14,6 +14,15 @@ function ElementIsNotHidden(in_element) {
     return getComputedStyle(in_element, "visibility") != "hidden";
 }
 
+function GenerateXPathProp(in_att, in_val) {
+    if (in_val == "undefined") return "";
+    else return (in_val.contains(`"`)) ? `contains(${in_att}, '${in_val}') ` : `contains(${in_att}, "${in_val}") `;
+}
+
+function XPathIsUnique(in_XPath) {
+    return (FindElementsByXPath(in_XPath).length == 1);
+}
+
 // --=|| Reusable Functions ||=--
 
 function FindElementsByXPath(in_xpath, in_ignoreHidden = false) {
@@ -33,11 +42,6 @@ function FindElementsByXPath(in_xpath, in_ignoreHidden = false) {
     }
 
     return elements;
-}
-
-function GenerateXPathProp(in_att, in_val) {
-    if (in_val == "undefined") return "";
-    else return (in_val.contains(`"`)) ? `contains(${in_att}, '${in_val}') ` : `contains(${in_att}, "${in_val}") `;
 }
 
 function GenerateUniqueXPath(in_webElement, in_parentXPath) {
@@ -63,23 +67,19 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
     return xpath;
 }
 
-function XPathIsUnique(in_XPath) {
-    return (FindElementsByXPath(in_XPath).length == 1);
-}
-
 // Unit Tests
-function UnitTest_FindElementsByXPath(in_page, in_xpath) {
+function UnitTest_FindElementsByXPath(in_page, in_xpath, in_parentXPath = "", in_ignoreHidden = false) {
     navigateTo(in_page);
-    const elements = FindElementsByXPath(in_xpath, true);
+    const elements = FindElementsByXPath(in_parentXPath + in_xpath, in_ignoreHidden);
 
     let logStr = `
-        -=|| FindElementsByXPath('${in_xpath}) ||=- \n
+        -=|| FindElementsByXPath('${in_parentXPath + in_xpath}, ${in_ignoreHidden}) ||=- \n
         Elements(${elements.length}): \n
     `;
 
     for(let i = 0; i < elements.length; i++) {
         let elem = elements[i];
-        let elementXPath = GenerateUniqueXPath(elem, "");
+        let elementXPath = GenerateUniqueXPath(elem, in_parentXPath);
         let isUnique = (XPathIsUnique(elementXPath)) ? "Unique" : "Not Unique";
         let isHidden = (getComputedStyle(elem, "visibility") == "hidden") ? " HIDDEN ": " ";
 
@@ -101,7 +101,7 @@ function UnitTest_XpathIsUnique(in_page, in_XPath, in_expectedResult) {
 }
 
 
-UnitTest_FindElementsByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
+UnitTest_FindElementsByXPath("https://uat.wahpf.org/us/en/home-page.html", "//a", "//*[@id = 'navbar' OR contains(@class, 'page__main-nav') OR contains(@class, 'page__primary-nav')]", true);
 //UnitTest_XpathIsUnique("https://uat.wahpf.org/us/en/home-page.html", `//A[contains(@href, "#") and contains(., "My Account") ]`, true)
 
 

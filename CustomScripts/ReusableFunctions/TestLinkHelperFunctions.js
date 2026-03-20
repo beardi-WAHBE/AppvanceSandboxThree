@@ -3,6 +3,8 @@
  * This script requires AIQ Web Designer
 */
 
+// Link Parameters
+
 const viewableFileTypes = [".jpeg", ".jpg", ".png", ".gif", ".svg", ".pdf", ".mp3"];
 const downloadableFileTypes = [".docx", ".xlsx", ".pptx", ".ics"];
 const deniedSymbols = ["|", "[", "]", "\\"];
@@ -41,3 +43,65 @@ const envs = {
     QA:  "https://qa.",
     EXT: "",
 }
+
+// Link Helper Functions
+
+function GetSite(in_url) {
+    let returnSite = "NULL";
+
+    Object.keys(sites).forEach((site) => {
+        // Check the URL for an identifier that corrsponds to one of our Sites
+        sites[site].some((identifier) => {
+            if(in_url.includes(identifier)) {
+                returnSite = site
+                return;
+            };
+        });
+        // Stop checking if the site was identified
+        if (returnSite != "NULL") break;
+    });
+
+    return returnSite;
+}
+
+function GetEnv(in_url) {
+    let returnEnv = "NULL";
+
+    Object.keys(envs).forEach((env) => {
+        // Check the URL for an identifier that corrsponds to one of our Sites
+        if(in_url.contains(envs[env])) {
+            returnEnv = env;
+            break;
+        }
+    });
+
+    return returnEnv;
+}
+
+function IsOnHomepage(in_url) {
+    if (["EXT", "APP"].includes(GetSite(in_url))) return false;
+
+    let returnVal = false;
+
+    const env = GetEnv(in_url);
+    homepageURLs[env].forEach((val) => {
+        if (in_url == env + val) {
+            returnVal = true;
+            break;
+        }
+    });
+
+    return returnVal;
+}
+
+// Unit Tests
+function UnitTest_GetPageData(in_url) {
+    log(`
+        GET PAGE DATA: ${in_url} \n
+         - ENV:  ${GetEnv(in_url)}
+         - SITE: ${GetSite(in_url)}
+         - On Homepage: ${IsOnHomepage(in_url)}
+    `);
+}
+
+UnitTest_GetPageData("https://qa.wapathways.org/");

@@ -2,6 +2,7 @@
  * @aiq.webdesigner
  * This script requires AIQ Web Designer
 */
+include("{ds}/LinkObj.js")
 
 function GetPageLinks(in_parentXPath) {
     let links = _eval("ds$('#block-whbelanguageswitcher').find('a')");
@@ -9,8 +10,6 @@ function GetPageLinks(in_parentXPath) {
     for (let i = 0; i < links.length; i++) {
         let href = getAttribute(links[i], "href")
         log(i + ": " + href);
-        click(links[i]);
-        verifyContains(getBrowserURL(), href);
-        navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
+        GenerateUniqueXPath(links[i], "//header");
     }
 }

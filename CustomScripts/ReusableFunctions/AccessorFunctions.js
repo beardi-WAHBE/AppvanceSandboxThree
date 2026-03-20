@@ -70,7 +70,7 @@ function XPathIsUnique(in_XPath) {
 // Unit Tests
 function UnitTest_FindElementsByXPath(in_page, in_xpath) {
     navigateTo(in_page);
-    const elements = FindElementsByXPath(in_xpath);
+    const elements = FindElementsByXPath(in_xpath, true);
 
     let logStr = `
         -=|| FindElementsByXPath('${in_xpath}) ||=- \n

@@ -81,6 +81,7 @@ function IsOnHomepage(in_url) {
     let returnVal = false;
 
     const env = GetEnv(in_url);
+    log(`IsOnHomepage: ${env}`);
     homepageURLs[env].forEach((val) => {
         if (in_url == env + val && !returnVal) {
             returnVal = true;

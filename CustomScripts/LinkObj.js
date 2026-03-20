@@ -48,12 +48,18 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
 }
 
 // Unit Tests
-navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
-const elements = FindByXPath("//header//a");
-let logStr = `\n
-\n -=|| FindByXPath('//header//a') \\=-
-Elements(${elements.length}): ${elements}`;
-for(let i = 0; i < elements.length; i++) {
-    logStr += "\n - " + getTextSelenium(elements[i]);
+function UnitTest_FindByXPath(in_xpath) {
+    navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
+    const elements = FindByXPath(in_xpath);
+
+    let logStr = `\n
+    \n -=|| FindByXPath('${in_xpath}) \\=-
+    Elements(${elements.length}):`;
+    for(let i = 0; i < elements.length; i++) {
+        logStr += "\n - " + getTextSelenium(elements[i]);
+    }
+
+    log(logStr);
 }
-log(logStr);
+
+UnitTest_FindByXPath("//header//a");

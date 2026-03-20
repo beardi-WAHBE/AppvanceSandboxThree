@@ -83,6 +83,7 @@ function IsOnHomepage(in_url) {
 
     let returnVal = false;
     homepageURLs[site].forEach((val) => {
+        log(env + val);
         if (in_url == env + val && !returnVal) {
             returnVal = true;
         }

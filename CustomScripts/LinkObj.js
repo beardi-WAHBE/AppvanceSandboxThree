@@ -8,7 +8,7 @@ function GenerateXPathProp(in_att, in_val) {
 }
 
 function GenerateUniqueXPath(in_webElement, in_parentXPath) {
-    let xpath = "";
+    let xpath = in_parentXPath;
     
     const arr_XPathProps = [
         GenerateXPathProp("@name", getAttribute(in_webElement, "name")),
@@ -17,11 +17,11 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
         GenerateXPathProp(".", getTextSelenium(in_webElement)),
     ]
 
-    xpath = "//a[";
+    xpath += "//a[";
     for(let i = 0; i < arr_XPathProps.length; i++) {
         if (arr_XPathProps[i] != "") xpath += arr_XPathProps[i];
 
-        if (i != arr_XPathProps.length - 1) xpath += "and"
+        if (i != arr_XPathProps.length - 1) xpath += " and "
     }
     xpath += "]";
     

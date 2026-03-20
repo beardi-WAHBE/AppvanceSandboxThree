@@ -10,10 +10,20 @@ function GenerateXPathProp(in_att, in_val) {
 function GenerateUniqueXPath(in_webElement, in_parentXPath) {
     let xpath = "";
     
-    const target_name = GenerateXPathProp("@name", getAttribute(in_webElement, "name"));
-    const target_href = GenerateXPathProp("@href", getAttribute(in_webElement, "href"));
-    const target_class = GenerateXPathProp("@class", getAttribute(in_webElement, "name"));
-    const target_text = GenerateXPathProp(".", getTextSelenium(in_webElement));
+    const arr_XPathProps = [
+        GenerateXPathProp("@name", getAttribute(in_webElement, "name")),
+        GenerateXPathProp("@href", getAttribute(in_webElement, "href")),
+        GenerateXPathProp("@class", getAttribute(in_webElement, "name")),
+        GenerateXPathProp(".", getTextSelenium(in_webElement)),
+    ]
+
+    xpath = "//a[";
+    for(let i = 0; i < arr_XPathProps.count; i++) {
+        if (arr_XPathProps[i] != "") xpath += arr_XPathProps[i];
+
+        if (i != arr_XPathProps.count - 1) xpath += "and"
+    }
+    xpath += "]";
 
     xpath = `${in_parentXPath}//a[${target_name} and ${target_href} and ${target_class} and ${target_text}]`;
     return xpath;

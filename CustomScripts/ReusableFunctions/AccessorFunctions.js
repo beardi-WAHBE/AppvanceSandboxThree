@@ -100,9 +100,26 @@ function UnitTest_XpathIsUnique(in_page, in_XPath, in_expectedResult) {
     `);
 }
 
+function UnitTest_ClickOnAllLinks(in_page, in_parentXPath, in_ignoreHidden = true) {
+    navigateTo(in_page);
 
-UnitTest_FindElementsByXPath("https://uat.wahpf.org/us/en/home-page.html", "//a", "//*[@id = 'navbar' or contains(@class, 'page__main-nav') or contains(@class, 'page__primary-nav')]", true);
+    const elements = FindElementsByXPath(in_parentXPath + "//a", in_ignoreHidden);
+    let elementAccessors = [];
+    elements.forEach((elem) => {
+        elementAccessors.add(GenerateUniqueXPath(elem, in_parent));
+    });
+
+    elementAccessors.forEach((in_xpath) => {
+        click(byXPath(in_xpath));
+        navigateTo(in_page);
+    });
+}
+
+
+//UnitTest_FindElementsByXPath("https://uat.wahpf.org/us/en/home-page.html", "//a", "//*[@id = 'navbar' or contains(@class, 'page__main-nav') or contains(@class, 'page__primary-nav')]", true);
 //UnitTest_XpathIsUnique("https://uat.wahpf.org/us/en/home-page.html", `//A[contains(@href, "#") and contains(., "My Account") ]`, true)
+UnitTest_ClickOnAllLinks("https://uat.wahpf.org/us/en/home-page.html", "//div[@id = 'main-content']");
+
 
 
 

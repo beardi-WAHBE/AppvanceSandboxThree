@@ -2,6 +2,11 @@
  * @aiq.webdesigner
  * This script requires AIQ Web Designer
 */
+
+function FindByXPath(in_xpath) {
+    return _eval(`ds$(document).evaluate(${in_xpath}, ds$(document)), null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);`);
+}
+
 function GenerateXPathProp(in_att, in_val) {
     if (in_val == "undefined") return "";
     else return (in_val.contains(`"`)) ? `contains(${in_att}, '${in_val}') ` : `contains(${in_att}, "${in_val}") `;
@@ -26,6 +31,8 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
         if (i != arr_XPathProps.length - 1) xpath += " and "
     }
     xpath += "]";
+
+    let bool_unique = (FindByXPath(xpath).length == 1);
     
     return xpath;
 }

@@ -50,7 +50,9 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
 // Unit Tests
 navigateTo("https://www.wahealthplanfinder.org/us/en/home-page.html");
 const elements = FindByXPath("//header//a");
-let logStr = `\nElements(${elements.length}): ${elements}`;
+let logStr = `\n
+\n -=|| FindByXPath('//header//a') \\=-
+Elements(${elements.length}): ${elements}`;
 for(let i = 0; i < elements.length; i++) {
     logStr += "\n - " + getTextSelenium(elements[i]);
 }

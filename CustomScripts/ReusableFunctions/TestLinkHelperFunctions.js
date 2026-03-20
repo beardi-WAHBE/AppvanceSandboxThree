@@ -96,6 +96,7 @@ function IsOnHomepage(in_url) {
 
 // Unit Tests
 function UnitTest_GetPageData(in_url) {
+    //navigateTo(in_url);
     log(`
         GET PAGE DATA: ${in_url} \n
          - ENV:  ${GetEnv(in_url)}

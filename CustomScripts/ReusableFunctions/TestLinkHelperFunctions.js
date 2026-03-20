@@ -82,8 +82,8 @@ function IsOnHomepage(in_url) {
 
     if (["EXT", "APP"].includes(site)) return false;
 
+    let returnVal = false;
     try {
-        let returnVal = false;
         homepageURLs[site].forEach((val) => {
             if (in_url == envs[env] + val && !returnVal) {
                 returnVal = true;
@@ -91,7 +91,7 @@ function IsOnHomepage(in_url) {
         });
     }
     catch(TypeError) {
-        log(`ERROR - Index out of bounds: Looking for ${site} in homepaheURLs ${homepageURLs}`)
+        log(`ERROR - Index out of bounds: Looking for ${site} in homepageURLs ${homepageURLs.toString()}`)
     }
     finally {
         return returnVal;

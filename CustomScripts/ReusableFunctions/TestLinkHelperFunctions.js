@@ -50,7 +50,7 @@ function GetSite(in_url) {
     // Default to External Site
     let returnSite = "EXT";
 
-    for(let site in Object.keys(sites)) {
+    for(let site of Object.keys(sites)) {
         if (site == "EXT") continue;
         try {
             sites[site].some((identifier) => {

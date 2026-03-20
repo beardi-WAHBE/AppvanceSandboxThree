@@ -64,4 +64,4 @@ function UnitTest_FindByXPath(in_page, in_xpath) {
     log(logStr);
 }
 
-UnitTest_FindByXPath("https://www.wahealthplanfinder.org/us/en/home-page.html", "//header//a");
+UnitTest_FindByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");

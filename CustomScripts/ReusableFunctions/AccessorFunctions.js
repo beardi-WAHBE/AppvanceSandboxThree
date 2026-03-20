@@ -12,7 +12,7 @@ function FilterAppLinks(in_href) {
 
 // --=|| Reusable Functions ||=--
 
-function FindByXPath(in_xpath) {
+function FindElementsByXPath(in_xpath) {
     return  _eval(`
         const parentNode = ds$(document)[0]; 
         const result = parentNode.evaluate(\`${in_xpath}\`, parentNode, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
@@ -54,16 +54,16 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
 }
 
 function XPathIsUnique(in_XPath) {
-    return (FindByXPath(in_XPath).length == 1);
+    return (FindElementsByXPath(in_XPath).length == 1);
 }
 
 // Unit Tests
-function UnitTest_FindByXPath(in_page, in_xpath) {
+function UnitTest_FindElementsByXPath(in_page, in_xpath) {
     navigateTo(in_page);
-    const elements = FindByXPath(in_xpath);
+    const elements = FindElementsByXPath(in_xpath);
 
     let logStr = `
-        -=|| FindByXPath('${in_xpath}) ||=- \n
+        -=|| FindElementsByXPath('${in_xpath}) ||=- \n
         Elements(${elements.length}): \n
     `;
 
@@ -82,12 +82,23 @@ function UnitTest_XpathIsUnique(in_page, in_XPath, in_expectedResult) {
     let actualResult = XPathIsUnique(in_XPath);
     log(`
     \n${in_XPath}: 
-    \n - Length: ${FindByXPath(in_XPath).length}
+    \n - Length: ${FindElementsByXPath(in_XPath).length}
     \n - Expected: ${in_expectedResult}
     \n - Actual:   ${actualResult}
     `);
 }
 
+function UnitTest_UseBuiltInLinkFind(in_page) {
+    navigateTo(in_page);
+    let foundLinks = links(byTagName("header"));
+    log(foundLinks);
+}
 
-UnitTest_FindByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
+
+//UnitTest_FindElementsByXPath("https://uat.wahpf.org/us/en/home-page.html", "//header//a");
 //UnitTest_XpathIsUnique("https://uat.wahpf.org/us/en/home-page.html", `//A[contains(@href, "#") and contains(., "My Account") ]`, true)
+UnitTest_UseBuiltInLinkFind("https://uat.wahpf.org/us/en/home-page.html");
+
+
+
+

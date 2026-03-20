@@ -59,8 +59,10 @@ function UnitTest_FindByXPath(in_page, in_xpath) {
     `;
 
     for(let i = 0; i < elements.length; i++) {
-        let isUnique = (XPathIsUnique(GenerateUniqueXPath(elements[i], ""))) ? "Unique" : "Not Unique";
-        logStr += ` - ${getTextSelenium(elements[i])}: ${GenerateUniqueXPath(elements[i], "")} (${isUnique}) \n`;
+        let elementXPath = GenerateUniqueXPath(elements[i], "");
+        let isUnique = (XPathIsUnique(elementXPath)) ? "Unique" : "Not Unique";
+        
+        logStr += ` - ${getTextSelenium(elements[i])}: ${elementXPath} (${isUnique}) \n`;
     }
 
     log(logStr);

@@ -11,7 +11,6 @@ function FindByXPath(in_xpath) {
         while((node = result.iterateNext()) !== null) {
             nodes.push(node)
         }
-        $(nodes);
     `);
 }
 

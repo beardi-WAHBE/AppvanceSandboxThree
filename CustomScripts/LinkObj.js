@@ -12,7 +12,7 @@ function FindByXPath(in_xpath) {
         while ((node = result.iterateNext()) !== null) {
             nodes.push(node);
         }
-        $(nodes);
+        nodes;
     `);
     log(`Elements(${elements.length}): ${elements}`);
     for(let i = 0; i < elements.length; i++) {

@@ -101,7 +101,7 @@ function UnitTest_XpathIsUnique(in_page, in_XPath, in_expectedResult) {
 }
 
 
-UnitTest_FindElementsByXPath("https://uat.wahpf.org/us/en/home-page.html", "//a", "//*[@id = 'navbar' OR contains(@class, 'page__main-nav') OR contains(@class, 'page__primary-nav')]", true);
+UnitTest_FindElementsByXPath_Links_InHPFHeader_IgnoreHidden("https://uat.wahpf.org/us/en/home-page.html", "//a", "//*[@id = 'navbar' OR contains(@class, 'page__main-nav') OR contains(@class, 'page__primary-nav')]", true);
 //UnitTest_XpathIsUnique("https://uat.wahpf.org/us/en/home-page.html", `//A[contains(@href, "#") and contains(., "My Account") ]`, true)
 
 

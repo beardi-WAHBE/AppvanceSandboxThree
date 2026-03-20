@@ -24,8 +24,7 @@ function GenerateUniqueXPath(in_webElement, in_parentXPath) {
         if (i != arr_XPathProps.count - 1) xpath += "and"
     }
     xpath += "]";
-
-    xpath = `${in_parentXPath}//a[${target_name} and ${target_href} and ${target_class} and ${target_text}]`;
+    
     return xpath;
 }
 

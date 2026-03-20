@@ -41,7 +41,6 @@ const envs = {
     DEV: "https://dev",
     PRD: "https://www",
     QA:  "https://qa.",
-    EXT: "",
 }
 
 // Link Helper Functions
